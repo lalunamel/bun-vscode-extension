@@ -1,6 +1,6 @@
 # Bun VSCode Extension Template
 
-This is a Bun template that contains the scaffolding of a VSCode extension.
+A Bun template that contains the scaffolding for a VSCode extension.
 
 ## Features
 
