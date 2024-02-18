@@ -52,6 +52,8 @@ This second part is required so that when running tests, `import * as vscode fro
 
 To run the extension, simply press `F5` or go to `Run and Debug > Run Extension`. A new VSCode instance will be started and your extension will be loaded in there. You can `console.log` and set breakpoints, too!
 
+Once the VSCode instance has loaded the extension, open the command pallette with `Cmd + Shift + P` and type `hello world` to find the command added by the extension.
+
 ## Differences with the stock Yeoman generator
 
 - This template does not use mocha as described in the [VSCode - Testing Extensions](https://code.visualstudio.com/api/working-with-extensions/testing-extension) docs
