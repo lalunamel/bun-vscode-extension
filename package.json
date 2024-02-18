@@ -1,5 +1,5 @@
 {
-  "name": "hello-world-extension",
+  "name": "vscode-extension",
   "version": "0.0.1",
   "main": "./dist/extension.cjs",
   "module": "index.ts",
@@ -17,7 +17,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "hello-world-extension.helloworld",
+        "command": "vscode-extension.helloworld",
         "title": "Hello World"
       }
     ]
