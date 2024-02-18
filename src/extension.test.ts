@@ -21,7 +21,7 @@ describe("extension", () => {
       const callback = (vscode.commands.registerCommand as jest.Mock).mock
         .calls[0][1] as any as Function;
 
-      expect(command).toEqual("vscode-extension.helloworld");
+      expect(command).toEqual("bun-vscode-extension.helloworld");
 
       expect(vscode.window.showInformationMessage).not.toHaveBeenCalled();
       callback();

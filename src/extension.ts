@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 
 export const activate = (context: vscode.ExtensionContext) => {
   const disposable = vscode.commands.registerCommand(
-    "vscode-extension.helloworld",
+    "bun-vscode-extension.helloworld",
     () => {
       vscode.window.showInformationMessage("Hello World!");
     }

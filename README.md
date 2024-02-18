@@ -63,7 +63,7 @@ I generally found that the Yeoman template uses older technologies like mocha an
 ## Possible errors
 
 ```
-Activating extension 'undefined_publisher.vscode-extension-with-bun' failed: require() of ES Module dist/extension.js from /Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/loader.js not supported. extension.js is treated as an ES module file as it is a .js file whose nearest parent package.json contains "type": "module" which declares all .js files in that package scope as ES modules. Instead rename extension.js to end in .cjs, change the requiring code to use dynamic import() which is available in all CommonJS modules, or change "type": "module" to "type": "commonjs" in package.json to treat all .js files as CommonJS (using .mjs for all ES modules instead).
+Activating extension 'undefined_publisher.bun-vscode-extension' failed: require() of ES Module dist/extension.js from /Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/loader.js not supported. extension.js is treated as an ES module file as it is a .js file whose nearest parent package.json contains "type": "module" which declares all .js files in that package scope as ES modules. Instead rename extension.js to end in .cjs, change the requiring code to use dynamic import() which is available in all CommonJS modules, or change "type": "module" to "type": "commonjs" in package.json to treat all .js files as CommonJS (using .mjs for all ES modules instead).
 ```
 
 This error is produced because VSCode can't load your extension. This is probably happening because the file you're tyring to load is using ESM instead of CommonJS. You can fix this by fiddling with the settings in `build-with-esbuild.ts`.

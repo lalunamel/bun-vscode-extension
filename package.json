@@ -1,5 +1,5 @@
 {
-  "name": "vscode-extension",
+  "name": "bun-vscode-extension",
   "version": "0.0.1",
   "main": "./dist/extension.cjs",
   "module": "index.ts",
@@ -17,7 +17,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "vscode-extension.helloworld",
+        "command": "bun-vscode-extension.helloworld",
         "title": "Hello World"
       }
     ]
