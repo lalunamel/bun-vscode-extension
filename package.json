@@ -1,0 +1,34 @@
+{
+  "name": "hello-world-extension",
+  "version": "0.0.1",
+  "main": "./dist/extension.cjs",
+  "module": "index.ts",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "esbuild": "^0.20.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "build": "bun run ./scripts/build-with-esbuild.ts"
+  },
+  "//": "START EXTENSION ATTRIBUTES",
+  "contributes": {
+    "commands": [
+      {
+        "command": "hello-world-extension.helloworld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "description": "Extension description",
+  "displayName": "Extension display name",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@types/vscode": "^1.86.0"
+  }
+}
