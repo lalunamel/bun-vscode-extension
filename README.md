@@ -55,6 +55,8 @@ The tests there are unit tests, which is to say that all the dependencies of the
 
 The first is normal spying/mocking as you'd find in any other test.
 
+When writing tests for your extension, you must mock out any aspect of the `vscode` package you're using in `mocks/vscode.ts` so that those aspects are available to your implementation when the test runs.
+
 The second is required because the `vscode` package doesn't actually contain any implementation - only types (see notes on `build-with-esbuild.ts`). The `mocks` folder is hooked up by the `paths.vscode` value in `tsconfig.json` so that when you `import * as vscode from "vscode"`, rather than looking in `node_modules` for `vscode`, the resolver looks in `./mocks/vscode.ts`.
 
 The mocks are only used when running tests and not when building to `./dist`. That is because `vscode` is marked as "external` in the esbuild config.
