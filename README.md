@@ -63,6 +63,12 @@ To run the extension, simply press `F5` or go to `Run and Debug > Run Extension`
 
 Once the VSCode instance has loaded the extension, open the command pallette with `Cmd + Shift + P` and type `hello world` to find the command added by the extension.
 
+### Packaging
+
+Packaging a VSCode extension means turning it all into a single `.vsix` file that can be installed manually by `Right Click > Install extension VSIX` in VSCode.
+
+To package your extension, `bun run package`.
+
 ## Differences with the stock Yeoman generator
 
 - This template does not use mocha as described in the [VSCode - Testing Extensions](https://code.visualstudio.com/api/working-with-extensions/testing-extension) docs

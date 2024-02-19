@@ -1,21 +1,38 @@
 {
-  "name": "bun-vscode-extension",
-  "version": "0.0.1",
   "main": "./dist/extension.cjs",
   "module": "index.ts",
+  "dependencies": {
+    "@types/vscode": "^1.86.0"
+  },
   "devDependencies": {
     "@types/bun": "latest",
+    "@vscode/vsce": "^2.23.0",
     "esbuild": "^0.20.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
+  "type": "module",
+  "files": [
+    "./dist/extension.cjs"
+  ],
   "scripts": {
     "dev": "echo 'Open this directory in VSCode and then run your extension with F5 or `Run and Debug > Run Extension`!'",
     "build": "bun run ./scripts/build-with-esbuild.ts",
-    "watch": "bun run ./scripts/watch-with-esbuild.ts"
+    "watch": "bun run ./scripts/watch-with-esbuild.ts",
+    "vsce-package": "bun run vsce package",
+    "package": "bun run build && bun run vsce-package",
+    "clean": "rm -r ./dist"
   },
   "//": "START EXTENSION ATTRIBUTES",
+  "name": "bun-vscode-extension",
+  "version": "0.0.1",
+  "description": "Extension description",
+  "displayName": "Extension display name",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOURNAME"
+  },
   "contributes": {
     "commands": [
       {
@@ -24,13 +41,7 @@
       }
     ]
   },
-  "description": "Extension description",
-  "displayName": "Extension display name",
   "engines": {
     "vscode": "^1.86.0"
-  },
-  "type": "module",
-  "dependencies": {
-    "@types/vscode": "^1.86.0"
   }
 }
