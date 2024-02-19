@@ -13,9 +13,6 @@
     "typescript": "^5.0.0"
   },
   "type": "module",
-  "files": [
-    "./dist/extension.cjs"
-  ],
   "scripts": {
     "dev": "echo 'Open this directory in VSCode and then run your extension with F5 or `Run and Debug > Run Extension`!'",
     "build": "bun run ./scripts/build-with-esbuild.ts",
