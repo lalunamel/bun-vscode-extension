@@ -1,22 +1,4 @@
 import esbuild from "esbuild";
+import config from "./esbuild.config";
 
-esbuild
-  .build({
-    entryPoints: ["./src/extension.ts"],
-    bundle: true,
-    platform: "node",
-    target: "node12",
-    outdir: "./dist",
-    outbase: "./src",
-    outExtension: {
-      ".js": ".cjs",
-    },
-    format: "cjs",
-    external: ["vscode"],
-    loader: {
-      ".ts": "ts",
-      ".js": "js",
-    },
-    logLevel: "info",
-  })
-  .catch(() => process.exit(1));
+esbuild.build(config).catch(() => process.exit(1));

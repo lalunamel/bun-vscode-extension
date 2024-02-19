@@ -12,7 +12,8 @@
   },
   "scripts": {
     "dev": "echo 'Open this directory in VSCode and then run your extension with F5 or `Run and Debug > Run Extension`!'",
-    "build": "bun run ./scripts/build-with-esbuild.ts"
+    "build": "bun run ./scripts/build-with-esbuild.ts",
+    "watch": "bun run ./scripts/watch-with-esbuild.ts"
   },
   "//": "START EXTENSION ATTRIBUTES",
   "contributes": {
