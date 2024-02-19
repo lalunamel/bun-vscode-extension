@@ -10,6 +10,14 @@ A Bun template that contains the scaffolding for a VSCode extension.
 - running your extension via a VSCode launch config (i.e. using `F5`)
 - placeholder extension metatdata in `package.json`
 
+## Getting Started
+
+1. `bun create lalunamel/bun-vscode-extension my-extension`
+2. `cd my-extension`
+3. `code .`
+4. Modify `package.json` with your information
+5. Modify `LICENSE.txt` with the current year and your name
+
 ## How this template works
 
 ### Files and folders
