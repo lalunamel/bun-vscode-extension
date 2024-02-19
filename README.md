@@ -17,6 +17,7 @@ A Bun template that contains the scaffolding for a VSCode extension.
 3. `code .`
 4. Modify `package.json` with your information
 5. Modify `LICENSE.txt` with the current year and your name
+6. Start recording your work in `CHANGELOG.md`
 
 ## How this template works
 
