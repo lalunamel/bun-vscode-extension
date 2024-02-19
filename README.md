@@ -32,6 +32,8 @@ A Bun template that contains the scaffolding for a VSCode extension.
   - `vscode.ts` - the mocked out version of the vscode library. I'm not quite sure what the structure of the normal library is, but I had a hell of a time getting it to work with bun and bun test. I think just the types are published, but the source code isn't, and then when your extension is built and bundled, the actual implementation of all the api calls used in your extension live within vscode itself. Quite complex, quite annoying. I'm sure I'm missing something and there's a better way but :shrug:
 - `scripts`
   - `build-with-esbuild.ts` - contains the logic to build the app with esbuild. Since esbuild does not use config files like the rest of the bundlers, this is the way to move all of that config into a file somewhere other than `package.json`. In order to get around the annoyances with the `vscode` package not actually existing, the `vscode` package is marked as "external" (and therefore not required to be resolvable).
+  - `esbuild.config.ts` - contains the config for esbuild.
+  - `watch-with-esbuild.ts` - same as the build script, but runs in continuous watch mode.
 - `src` - contains the source files
   - `extension.ts` - the extension file.
   - `extension.test.ts` - the test for the extension
@@ -54,6 +56,8 @@ The tests there are unit tests, which is to say that all the dependencies of the
 The first is normal spying/mocking as you'd find in any other test.
 
 The second is required because the `vscode` package doesn't actually contain any implementation - only types (see notes on `build-with-esbuild.ts`). The `mocks` folder is hooked up by the `paths.vscode` value in `tsconfig.json` so that when you `import * as vscode from "vscode"`, rather than looking in `node_modules` for `vscode`, the resolver looks in `./mocks/vscode.ts`.
+
+The mocks are only used when running tests and not when building to `./dist`. That is because `vscode` is marked as "external` in the esbuild config.
 
 This second part is required so that when running tests, `import * as vscode from "vscode"` in the implementation file actually returns something (the something it returns is determined by the contents of `./mocks/vscode.ts`).
 
